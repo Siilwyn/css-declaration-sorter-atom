@@ -1,0 +1,26 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'CSS Declaration Sorter'
+      'submenu': [
+        {
+          'label': 'Sort according to the set order'
+          'command': 'css-declaration-sorter:sort'
+        }
+        {
+          'label': 'Sort alphabetically'
+          'command': 'css-declaration-sorter:sort-alphabetically'
+        }
+        {
+          'label': 'Sort according to SMACSS'
+          'command': 'css-declaration-sorter:sort-smacss'
+        }
+        {
+          'label': 'Sort according to Concentric CSS'
+          'command': 'css-declaration-sorter:sort-concentric-css'
+        }
+      ]
+    ]
+  }
+]
