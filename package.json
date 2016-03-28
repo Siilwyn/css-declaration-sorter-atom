@@ -29,7 +29,6 @@
   },
   "scripts": {
     "start": "atom .",
-    "postversion": "git push && npm publish",
     "lint": "eslint lib/*.js spec/*.js",
     "watch": "watch 'npm run lint --silent' lib spec"
   },
