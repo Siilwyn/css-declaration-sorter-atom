@@ -12,6 +12,11 @@
   ],
   "license": "MIT",
   "author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",
+  "files": [
+    "keymaps",
+    "lib",
+    "menus"
+  ],
   "main": "./lib/css-declaration-sorter",
   "repository": {
     "type": "git",
