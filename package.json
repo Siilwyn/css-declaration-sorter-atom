@@ -11,6 +11,7 @@
     "order"
   ],
   "license": "MIT",
+  "author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",
   "main": "./lib/css-declaration-sorter",
   "repository": {
     "type": "git",
