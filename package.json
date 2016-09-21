@@ -41,11 +41,11 @@
   "dependencies": {
     "css-declaration-sorter": "^1.5.0",
     "postcss": "^5.1.1",
-    "postcss-less": "^0.14.0",
-    "postcss-scss": "^0.1.9"
+    "postcss-less": "^0.15.0",
+    "postcss-scss": "^0.3.0"
   },
   "devDependencies": {
-    "eslint": "^2.0.0",
-    "watch": "^0.17.1"
+    "eslint": "^3.5.0",
+    "watch": "^0.19.2"
   }
 }
