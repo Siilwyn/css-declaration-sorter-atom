@@ -35,6 +35,7 @@
   },
   "scripts": {
     "start": "atom .",
+    "test": "atom --test ./spec/main-spec.js",
     "lint": "eslint lib/*.js spec/*.js",
     "watch": "watch 'npm run lint --silent' lib spec"
   },
