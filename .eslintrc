@@ -2,7 +2,9 @@
   "extends": "eslint:recommended",
 
   "env": {
+    "atomtest": true,
     "es6": true,
+    "jasmine": true,
     "node": true
   },
 
