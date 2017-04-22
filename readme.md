@@ -1,4 +1,6 @@
 # CSS Declaration Sorter Package
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Siilwyn/css-declaration-sorter-atom.svg)](https://greenkeeper.io/)
 [![Travis Build Status][travis-icon]][travis]
 [![David Dependencies Status][david-icon]][david]
 [![David devDependencies Status][david-dev-icon]][david-dev]
