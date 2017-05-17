@@ -42,7 +42,7 @@
   "dependencies": {
     "css-declaration-sorter": "^2.0.0",
     "postcss": "^6.0.0",
-    "postcss-less": "^0.15.0",
+    "postcss-less": "^1.0.0",
     "postcss-scss": "^1.0.0"
   },
   "devDependencies": {
