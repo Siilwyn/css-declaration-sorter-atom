@@ -1,5 +1,7 @@
 language: generic
 
+dist: trusty
+
 env:
   global:
     - APM_TEST_PACKAGES=""
