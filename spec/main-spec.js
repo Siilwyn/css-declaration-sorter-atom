@@ -48,7 +48,7 @@ describe('CSS Declaration Sorter', function () {
     activatePackage();
 
     editor.onDidChange(function () {
-      expect(editor.getText()).toBe('a{border:0;\n// flex \nflex:0;}');
+      expect(editor.getText()).toBe('a{border:0;\n//flex\nflex:0;}');
     });
   });
 
