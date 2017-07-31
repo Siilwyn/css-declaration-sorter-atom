@@ -1,5 +1,4 @@
 {
-  "pinVersions": true,
-  "semanticCommits": true,
-  "depTypes": [{"depType": "dependencies", "pinVersions": false}]
+  "pinVersions": false,
+  "schedule": ["on the last day of the month"]
 }
