@@ -19,8 +19,8 @@ All of the following commands are under the `atom-text-editor[data-grammar~='css
 
 By default `css-declaration-sorter:sort` is mapped to `ctrl-alt-c`. You may want to use keyboard shortcuts for triggering the other commands. You can easily [define your own](http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings).
 
-[travis]: https://travis-ci.org/Siilwyn/css-declaration-sorter
-[travis-icon]: https://img.shields.io/travis/Siilwyn/css-declaration-sorter/master.svg?style=flat-square
+[travis]: https://travis-ci.org/Siilwyn/css-declaration-sorter-atom
+[travis-icon]: https://img.shields.io/travis/Siilwyn/css-declaration-sorter-atom/master.svg?style=flat-square
 [david]: https://david-dm.org/Siilwyn/css-declaration-sorter-atom
 [david-icon]: https://img.shields.io/david/Siilwyn/css-declaration-sorter-atom.svg?style=flat-square
 [david-dev]: https://david-dm.org/Siilwyn/css-declaration-sorter-atom#info=devDependencies
