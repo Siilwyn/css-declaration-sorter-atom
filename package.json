@@ -2,25 +2,17 @@
   "name": "css-declaration-sorter",
   "version": "1.1.0",
   "description": "Sorts CSS declarations fast and automatically in a certain order.",
-  "keywords": [
-    "postcss",
-    "css",
-    "declaration",
-    "sorter",
-    "property",
-    "order"
-  ],
-  "license": "MIT",
-  "author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",
+  "main": "./lib/css-declaration-sorter",
   "files": [
     "keymaps",
     "lib",
     "menus"
   ],
-  "main": "./lib/css-declaration-sorter",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Siilwyn/css-declaration-sorter-atom.git"
+  "scripts": {
+    "start": "atom .",
+    "test": "atom --test ./spec/main-spec.js",
+    "lint": "eslint lib/*.js spec/*.js",
+    "watch": "watch 'npm run lint --silent' lib spec"
   },
   "activationCommands": {
     "atom-text-editor": [
@@ -29,15 +21,6 @@
       "css-declaration-sorter:sort-smacss",
       "css-declaration-sorter:sort-concentric-css"
     ]
-  },
-  "engines": {
-    "atom": ">=1.5.0 <2.0.0"
-  },
-  "scripts": {
-    "start": "atom .",
-    "test": "atom --test ./spec/main-spec.js",
-    "lint": "eslint lib/*.js spec/*.js",
-    "watch": "watch 'npm run lint --silent' lib spec"
   },
   "dependencies": {
     "css-declaration-sorter": "^2.0.0",
@@ -48,5 +31,22 @@
   "devDependencies": {
     "eslint": "^4.0.0",
     "watch": "^1.0.1"
-  }
+  },
+  "engines": {
+    "atom": ">=1.5.0 <2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Siilwyn/css-declaration-sorter-atom.git"
+  },
+  "author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",
+  "license": "MIT",
+  "keywords": [
+    "postcss",
+    "css",
+    "declaration",
+    "sorter",
+    "property",
+    "order"
+  ]
 }
