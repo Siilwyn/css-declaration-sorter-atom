@@ -11,8 +11,7 @@
   "scripts": {
     "start": "atom .",
     "test": "atom --test ./spec/main-spec.js",
-    "lint": "eslint lib/*.js spec/*.js",
-    "watch": "watch 'npm run lint --silent' lib spec"
+    "lint": "eslint lib/*.js spec/*.js"
   },
   "activationCommands": {
     "atom-text-editor": [
@@ -29,8 +28,7 @@
     "postcss-scss": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.0.0",
-    "watch": "^1.0.1"
+    "eslint": "^4.0.0"
   },
   "engines": {
     "atom": ">=1.5.0 <2.0.0"
