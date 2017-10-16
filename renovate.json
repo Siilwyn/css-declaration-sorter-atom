@@ -1,4 +1,3 @@
 {
-  "pinVersions": false,
-  "schedule": ["on the last day of the month"]
+  "extends": ["config:semverAllMonthly"]
 }
