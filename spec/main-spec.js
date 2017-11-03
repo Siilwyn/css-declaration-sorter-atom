@@ -14,6 +14,7 @@ describe('CSS Declaration Sorter', function () {
     waitsForPromise(function () {
       return atom.workspace.open().then(function (result) {
         editor = result;
+        jasmine.attachToDOM(editor.element);
         workspaceElement = atom.views.getView(editor);
         spyOn(editor, 'getText').andCallThrough();
       });
