@@ -13,14 +13,6 @@
     "test": "atom --test ./spec/main-spec.js",
     "lint": "eslint lib/*.js spec/*.js"
   },
-  "activationCommands": {
-    "atom-text-editor": [
-      "css-declaration-sorter:sort",
-      "css-declaration-sorter:sort-alphabetically",
-      "css-declaration-sorter:sort-smacss",
-      "css-declaration-sorter:sort-concentric-css"
-    ]
-  },
   "dependencies": {
     "css-declaration-sorter": "^3.0.0",
     "postcss": "^6.0.0",
