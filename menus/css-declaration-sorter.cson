@@ -20,6 +20,10 @@
           'label': 'Sort according to Concentric CSS'
           'command': 'css-declaration-sorter:sort-concentric-css'
         }
+        {
+          'label': 'Toggle format on save',
+          'command': 'css-declaration-sorter:toggle-format-on-save'
+        }
       ]
     ]
   }
