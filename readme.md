@@ -1,3 +1,4 @@
+Trigger CI
 # CSS Declaration Sorter Package
 [![Travis Build Status][travis-icon]][travis]
 [![David Dependencies Status][david-icon]][david]
