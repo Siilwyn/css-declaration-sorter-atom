@@ -1,6 +1,6 @@
 {
   "name": "css-declaration-sorter",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Sorts CSS declarations fast and automatically in a certain order.",
   "main": "./lib/css-declaration-sorter",
   "files": [
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Siilwyn/css-declaration-sorter-atom.git"
+    "url": "ssh://git@github.com/Siilwyn/css-declaration-sorter-atom.git"
   },
   "author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",
   "license": "MIT",
