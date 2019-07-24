@@ -14,7 +14,7 @@ os:
   - linux
   - osx
 
-dist: trusty
+dist: xenial
 
 ### Generic setup follows ###
 script:
@@ -38,10 +38,9 @@ sudo: false
 
 addons:
   apt:
-    sources:
-      - ubuntu-toolchain-r-test
     packages:
-      - g++-6
+      - build-essential
       - fakeroot
       - git
-      - libsecret-1-dev
+      - libgnome-keyring-dev
+      - libgconf-2-4
