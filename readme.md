@@ -1,7 +1,7 @@
 # CSS Declaration Sorter Package
 [![Travis Build Status][travis-icon]][travis]
 [![LGTM Grade][lgtm-icon]][lgtm]
-[![npm][npm-icon]][npm]
+[![apm][apm-icon]][apm]
 
 Sorts your CSS declarations, or Less and SCSS, in Atom, never gets tired. If you want to define a sort order project-wide check out the [css-declaration-sorter](https://github.com/Siilwyn/css-declaration-sorter#readme) Node.js module.
 
@@ -23,5 +23,5 @@ By default `css-declaration-sorter:sort` is mapped to `ctrl-alt-c`. You may want
 [travis-icon]: https://img.shields.io/travis/Siilwyn/css-declaration-sorter-atom/master.svg?style=flat-square
 [lgtm]: https://lgtm.com/projects/g/Siilwyn/css-declaration-sorter-atom/
 [lgtm-icon]: https://img.shields.io/lgtm/grade/javascript/g/Siilwyn/css-declaration-sorter-atom.svg?style=flat-square
-[npm]: https://www.npmjs.com/package/css-declaration-sorter-atom
-[npm-icon]: https://img.shields.io/npm/v/css-declaration-sorter-atom.svg?style=flat-square
+[apm]: https://atom.io/packages/css-declaration-sorter
+[apm-icon]: https://img.shields.io/apm/v/css-declaration-sorter?style=flat-square
