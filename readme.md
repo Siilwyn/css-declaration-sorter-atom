@@ -13,7 +13,7 @@ All of the following commands are under the `atom-text-editor[data-grammar~='css
 |Command|Description|
 |-------|-----------|
 |`css-declaration-sorter:sort`|Sorts according to configured order in the settings|
-|`css-declaration-sorter:sort-alphabetically`|Sorts alphabetically|
+|`css-declaration-sorter:sort-alphabetical`|Sorts alphabetical|
 |`css-declaration-sorter:sort-smacss`|Sorts according to [SMACSS](https://smacss.com/book/formatting#grouping)|
 |`css-declaration-sorter:sort-concentric-css`|Sorts according to [Concentric CSS](https://github.com/brandon-rhodes/Concentric-CSS)|
 

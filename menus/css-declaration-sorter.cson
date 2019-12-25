@@ -9,8 +9,8 @@
           'command': 'css-declaration-sorter:sort'
         }
         {
-          'label': 'Sort alphabetically'
-          'command': 'css-declaration-sorter:sort-alphabetically'
+          'label': 'Sort alphabetical'
+          'command': 'css-declaration-sorter:sort-alphabetical'
         }
         {
           'label': 'Sort according to SMACSS'
