@@ -49,7 +49,9 @@ describe('CSS Declaration Sorter', function () {
     activatePackage();
 
     editor.onDidChange(function () {
-      expect(editor.getText()).toBe('a{border:0;\n//flex\nflex:0;}');
+      setTimeout(() => {
+        expect(editor.getText()).toBe('a{border:0;\n//flex\nflex:0;}');
+      }, 100);
     });
   });
 
@@ -59,7 +61,9 @@ describe('CSS Declaration Sorter', function () {
     activatePackage();
 
     editor.onDidChange(function () {
-      expect(editor.getText()).toBe('a{border:0;\n//flex\nflex:0;}');
+      setTimeout(() => {
+        expect(editor.getText()).toBe('a{border:0;\n//flex\nflex:0;}');
+      }, 100);
     });
   });
 });
