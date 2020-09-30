@@ -17,8 +17,8 @@
           'command': 'css-declaration-sorter:sort-smacss'
         }
         {
-          'label': 'Sort according to Concentric CSS'
-          'command': 'css-declaration-sorter:sort-concentric-css'
+          'label': 'Sort according to Custom order'
+          'command': 'css-declaration-sorter:sort-custom'
         }
         {
           'label': 'Toggle format on save',
