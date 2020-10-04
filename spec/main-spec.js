@@ -1,21 +1,14 @@
 'use strict';
 
+const { sort } = require('../lib/css-declaration-sorter');
+
 describe('CSS Declaration Sorter', function () {
   let editor;
-  let workspaceElement;
-
-  const activatePackage = function () {
-    const packageActivation = atom.packages.activatePackage('css-declaration-sorter');
-    atom.commands.dispatch(workspaceElement, 'css-declaration-sorter:sort');
-    waitsForPromise(() => packageActivation);
-  };
 
   beforeEach(function () {
     waitsForPromise(function () {
       return atom.workspace.open().then(function (result) {
         editor = result;
-        jasmine.attachToDOM(editor.element);
-        workspaceElement = atom.views.getView(editor);
         spyOn(editor, 'getText').andCallThrough();
       });
     });
@@ -36,7 +29,7 @@ describe('CSS Declaration Sorter', function () {
   it('sorts CSS', function () {
     editor.setGrammar(atom.grammars.grammarForScopeName('source.css'));
     editor.setText('a{ flex: 0; border: 0; }');
-    activatePackage();
+    waitsForPromise(() => sort('alphabetical', editor));
 
     editor.onDidChange(function () {
       expect(editor.getText()).toBe('a{ border: 0; flex: 0; }');
@@ -45,25 +38,21 @@ describe('CSS Declaration Sorter', function () {
 
   it('sorts LESS', function () {
     editor.setGrammar(atom.grammars.grammarForScopeName('source.css.less'));
-    editor.setText('a{\n//flex\nflex:0;border:0;}');
-    activatePackage();
+    editor.setText('a{\n//flex\nflex:0;\nborder:0;\n}');
+    waitsForPromise(() => sort('alphabetical', editor));
 
     editor.onDidChange(function () {
-      setTimeout(() => {
-        expect(editor.getText()).toBe('a{border:0;\n//flex\nflex:0;}');
-      }, 100);
+      expect(editor.getText()).toBe('a{\nborder:0;\n//flex\nflex:0;\n}');
     });
   });
 
   it('sorts SCSS', function () {
     editor.setGrammar(atom.grammars.grammarForScopeName('source.css.scss'));
-    editor.setText('a{\n//flex\nflex:0;border:0;}');
-    activatePackage();
+    editor.setText('a{\n//flex\nflex:0;\nborder:0;\n}');
+    waitsForPromise(() => sort('alphabetical', editor));
 
     editor.onDidChange(function () {
-      setTimeout(() => {
-        expect(editor.getText()).toBe('a{border:0;\n//flex\nflex:0;}');
-      }, 100);
+      expect(editor.getText()).toBe('a{\nborder:0;\n//flex\nflex:0;\n}');
     });
   });
 });
