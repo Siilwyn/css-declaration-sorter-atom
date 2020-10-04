@@ -6,6 +6,7 @@ describe('CSS Declaration Sorter', function () {
   let editor;
   let testItem;
   let testCase;
+
   const testConfig = [
     {
       name: 'sorts CSS',
