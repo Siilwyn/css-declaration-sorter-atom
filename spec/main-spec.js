@@ -4,6 +4,8 @@ const { sort } = require('../lib/css-declaration-sorter');
 
 describe('CSS Declaration Sorter', function () {
   let editor;
+  let testItem;
+  let testCase;
   const testConfig = [
     {
       name: 'sorts CSS',
@@ -87,24 +89,25 @@ describe('CSS Declaration Sorter', function () {
     expect(editor.getText).toHaveBeenCalled();
   });
 
-  for (var testItem of testConfig) {
+  for (testItem of testConfig) {
     const {
       name: testName,
       scopeName,
       text
     } = testItem;
-    for (var testCase of testItem.expect) {
+    for (testCase of testItem.expect) {
       const {
         sortType,
         expectString
       } = testCase;
 
-      it(`${testName}-${sortType} (${scopeName})` , async function () {
+      it(`${testName}-${sortType} (${scopeName})`, function () {
         editor.setGrammar(atom.grammars.grammarForScopeName(scopeName));
         editor.setText(text);
 
-        await sort(sortType, editor);
-        expect(editor.getText()).toBe(expectString);
+        return sort(sortType, editor).then(function () {
+          expect(editor.getText()).toBe(expectString);
+        });
       });
     }
   }
