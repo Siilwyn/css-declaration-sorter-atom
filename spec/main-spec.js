@@ -1,21 +1,75 @@
 'use strict';
 
+const { sort } = require('../lib/css-declaration-sorter');
+
 describe('CSS Declaration Sorter', function () {
   let editor;
-  let workspaceElement;
+  const testConfig = [
+    {
+      name: 'sorts CSS',
+      scopeName: 'source.css',
+      text: 'a{ flex: 0; box-sizing: border-box; border: 0; }',
+      expect: [
+        {
+          sortType: 'alphabetical',
+          expectString: 'a{ border: 0; box-sizing: border-box; flex: 0; }',
+        },
+        {
+          sortType: 'smacss',
+          expectString: 'a{ box-sizing: border-box; flex: 0; border: 0; }',
+        },
+        {
+          sortType: 'concentric-css',
+          expectString: 'a{ flex: 0; box-sizing: border-box; border: 0; }',
+        }
+      ]
+    },
 
-  const activatePackage = function () {
-    const packageActivation = atom.packages.activatePackage('css-declaration-sorter');
-    atom.commands.dispatch(workspaceElement, 'css-declaration-sorter:sort');
-    waitsForPromise(() => packageActivation);
-  };
+    {
+      name: 'sorts LESS',
+      scopeName: 'source.css.less',
+      text: 'a{\n//flex\nflex:0;\nbox-sizing:border-box;\nborder:0;\n}',
+      expect: [
+        {
+          sortType: 'alphabetical',
+          expectString: 'a{\nborder:0;\nbox-sizing:border-box;\n//flex\nflex:0;\n}',
+        },
+        {
+          sortType: 'smacss',
+          expectString: 'a{\nbox-sizing:border-box;\n//flex\nflex:0;\nborder:0;\n}',
+        },
+        {
+          sortType: 'concentric-css',
+          expectString: 'a{\n//flex\nflex:0;\nbox-sizing:border-box;\nborder:0;\n}',
+        }
+      ]
+    },
+
+    {
+      name: 'sorts SCSS',
+      scopeName: 'source.css.scss',
+      text: 'a{\n//flex\nflex:0;\nbox-sizing:border-box;\nborder:0;\n}',
+      expect: [
+        {
+          sortType: 'alphabetical',
+          expectString: 'a{\nborder:0;\nbox-sizing:border-box;\n//flex\nflex:0;\n}',
+        },
+        {
+          sortType: 'smacss',
+          expectString: 'a{\nbox-sizing:border-box;\n//flex\nflex:0;\nborder:0;\n}',
+        },
+        {
+          sortType: 'concentric-css',
+          expectString: 'a{\n//flex\nflex:0;\nbox-sizing:border-box;\nborder:0;\n}',
+        }
+      ]
+    }
+  ];
 
   beforeEach(function () {
     waitsForPromise(function () {
       return atom.workspace.open().then(function (result) {
         editor = result;
-        jasmine.attachToDOM(editor.element);
-        workspaceElement = atom.views.getView(editor);
         spyOn(editor, 'getText').andCallThrough();
       });
     });
@@ -33,37 +87,25 @@ describe('CSS Declaration Sorter', function () {
     expect(editor.getText).toHaveBeenCalled();
   });
 
-  it('sorts CSS', function () {
-    editor.setGrammar(atom.grammars.grammarForScopeName('source.css'));
-    editor.setText('a{ flex: 0; border: 0; }');
-    activatePackage();
+  for (var testItem of testConfig) {
+    const {
+      name: testName,
+      scopeName,
+      text
+    } = testItem;
+    for (var testCase of testItem.expect) {
+      const {
+        sortType,
+        expectString
+      } = testCase;
 
-    editor.onDidChange(function () {
-      expect(editor.getText()).toBe('a{ border: 0; flex: 0; }');
-    });
-  });
+      it(`${testName}-${sortType} (${scopeName})` , async function () {
+        editor.setGrammar(atom.grammars.grammarForScopeName(scopeName));
+        editor.setText(text);
 
-  it('sorts LESS', function () {
-    editor.setGrammar(atom.grammars.grammarForScopeName('source.css.less'));
-    editor.setText('a{\n//flex\nflex:0;border:0;}');
-    activatePackage();
-
-    editor.onDidChange(function () {
-      setTimeout(() => {
-        expect(editor.getText()).toBe('a{border:0;\n//flex\nflex:0;}');
-      }, 100);
-    });
-  });
-
-  it('sorts SCSS', function () {
-    editor.setGrammar(atom.grammars.grammarForScopeName('source.css.scss'));
-    editor.setText('a{\n//flex\nflex:0;border:0;}');
-    activatePackage();
-
-    editor.onDidChange(function () {
-      setTimeout(() => {
-        expect(editor.getText()).toBe('a{border:0;\n//flex\nflex:0;}');
-      }, 100);
-    });
-  });
+        await sort(sortType, editor);
+        expect(editor.getText()).toBe(expectString);
+      });
+    }
+  }
 });
