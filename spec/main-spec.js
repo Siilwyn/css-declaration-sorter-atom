@@ -25,10 +25,6 @@ describe('CSS Declaration Sorter', function () {
           expectString: 'a{ flex: 0; box-sizing: border-box; border: 0; }',
         },
         {
-          sortType: 'concentric-css',
-          expectString: 'a{ flex: 0; box-sizing: border-box; border: 0; }',
-        },
-        {
           sortType: 'custom',
           expectString: 'a{ flex: 0; border: 0; box-sizing: border-box; }',
         }
