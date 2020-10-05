@@ -18,7 +18,7 @@
     "import-lazy": "^4.0.0",
     "postcss": "^7.0.34",
     "postcss-less": "^3.0.2",
-    "postcss-scss": "^2.1.1"
+    "postcss-scss": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^7.10.0"
