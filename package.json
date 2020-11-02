@@ -21,7 +21,7 @@
     "postcss-scss": "^3.0.2"
   },
   "devDependencies": {
-    "eslint": "^7.10.0"
+    "eslint": "^7.12.1"
   },
   "engines": {
     "atom": ">=1.5.0 <2.0.0"
