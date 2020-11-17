@@ -6,6 +6,7 @@ describe('CSS Declaration Sorter', function () {
   let editor;
   let testItem;
   let testCase;
+
   const testConfig = [
     {
       name: 'sorts CSS',
@@ -23,6 +24,10 @@ describe('CSS Declaration Sorter', function () {
         {
           sortType: 'concentric-css',
           expectString: 'a{ flex: 0; box-sizing: border-box; border: 0; }',
+        },
+        {
+          sortType: 'custom',
+          expectString: 'a{ flex: 0; border: 0; box-sizing: border-box; }',
         }
       ]
     },
@@ -43,6 +48,10 @@ describe('CSS Declaration Sorter', function () {
         {
           sortType: 'concentric-css',
           expectString: 'a{\n//flex\nflex:0;\nbox-sizing:border-box;\nborder:0;\n}',
+        },
+        {
+          sortType: 'custom',
+          expectString: 'a{\n//flex\nflex:0;\nborder:0;\nbox-sizing:border-box;\n}',
         }
       ]
     },
@@ -63,12 +72,17 @@ describe('CSS Declaration Sorter', function () {
         {
           sortType: 'concentric-css',
           expectString: 'a{\n//flex\nflex:0;\nbox-sizing:border-box;\nborder:0;\n}',
+        },
+        {
+          sortType: 'custom',
+          expectString: 'a{\n//flex\nflex:0;\nborder:0;\nbox-sizing:border-box;\n}',
         }
       ]
     }
   ];
 
   beforeEach(function () {
+    atom.config.set('css-declaration-sorter.customOrder', 'flex, border, box-sizing');
     waitsForPromise(function () {
       return atom.workspace.open().then(function (result) {
         editor = result;
