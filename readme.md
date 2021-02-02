@@ -1,7 +1,7 @@
 # CSS Declaration Sorter Package
-[![Travis Build Status][travis-icon]][travis]
-[![LGTM Grade][lgtm-icon]][lgtm]
-[![apm][apm-icon]][apm]
+[![Travis Build Status][travis-badge]][travis]
+[![LGTM Grade][lgtm-badge]][lgtm]
+[![apm][apm-badge]][apm]
 
 Sorts your CSS declarations, or Less and SCSS, in Atom, never gets tired. If you want to define a sort order project-wide check out the [css-declaration-sorter](https://github.com/Siilwyn/css-declaration-sorter#readme) Node.js module.
 
@@ -20,8 +20,8 @@ All of the following commands are under the `atom-text-editor[data-grammar~='css
 By default `css-declaration-sorter:sort` is mapped to `ctrl-alt-c`. You may want to use keyboard shortcuts for triggering the other commands. You can easily [define your own](http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings).
 
 [travis]: https://travis-ci.com/Siilwyn/css-declaration-sorter-atom
-[travis-icon]: https://img.shields.io/travis/com/Siilwyn/css-declaration-sorter-atom/master.svg?style=flat-square
+[travis-badge]: https://api.travis-ci.com/Siilwyn/css-declaration-sorter-atom.svg
 [lgtm]: https://lgtm.com/projects/g/Siilwyn/css-declaration-sorter-atom/
-[lgtm-icon]: https://img.shields.io/lgtm/grade/javascript/g/Siilwyn/css-declaration-sorter-atom.svg?style=flat-square
+[lgtm-badge]: https://tiny-shields.voorhoede.workers.dev/service/lgtm/grade/javascript/g/Siilwyn/css-declaration-sorter-atom
 [apm]: https://atom.io/packages/css-declaration-sorter
-[apm-icon]: https://img.shields.io/apm/v/css-declaration-sorter?style=flat-square
+[apm-badge]: https://img.shields.io/apm/v/css-declaration-sorter
