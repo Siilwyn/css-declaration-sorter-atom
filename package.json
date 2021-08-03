@@ -17,7 +17,7 @@
     "css-declaration-sorter": "^5.1.2",
     "import-lazy": "^4.0.0",
     "postcss": "^8.3.0",
-    "postcss-less": "^3.0.2",
+    "postcss-less": "^5.0.0",
     "postcss-scss": "^3.0.5"
   },
   "devDependencies": {
